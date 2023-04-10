@@ -156,6 +156,12 @@ update_subgeo() {
     flag=true
     log debug "Downloading ${clash_config}"
   fi
+
+  if [ "${bin_name}" = "sing-box" ] && [ "${auto_update_subscription}" = "true" ] && update_file "${singbox_config}" "${subscription_url}"; then
+    flag=true
+    log debug "Downloading ${singbox_config}"
+  fi
+
   if [ -f "${pid_file}" ] && [ "${flag}" = "true" ]; then
     restart_box
   fi

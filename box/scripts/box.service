@@ -27,7 +27,7 @@ crontab_geo() {
     echo "${update_interval} ${scripts_dir}/box.tool subgeo" >> "${run_path}/root"
     log debug "Interval crontab geo and subscription (${update_interval})."
     log debug "${bin_name} geox (${auto_update_geox})."
-    if [ "${bin_name}" = "clash" ]; then
+    if [ "${bin_name}" = "clash" || "${bin_name}" = "sing-box" ]; then
       log debug "${bin_name} subscription (${auto_update_subscription})."
     fi
   else
